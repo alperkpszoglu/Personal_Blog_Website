@@ -1,0 +1,79 @@
+﻿@model BlogMvcApp.Models.RoleEditModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Düzenle</h2>
+
+@using (Html.BeginForm())
+{
+    <input type="hidden" name="roleName" value="@Model.Role.Name" />
+    <input type="hidden" name="roleId" value="@Model.Role.Id" />
+
+    <div class="card card-body mt-3">
+
+        <div class="card-header">
+            @Model.Role.Name'e Ekle
+        </div>
+
+        <table class="table table-striped">
+            @if (Model.NonUsers.Count() != 0)
+            {
+                <tr>
+                    <th>Kullanıcı </th>
+                    <th>Rol</th>
+                </tr>
+                foreach (var user in Model.NonUsers)
+                {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td><input type="checkbox" name="IdsToAdd" value="@user.Id" /></td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="2">Bu role eklenebilecek kullanıcı mevcut değil</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+
+    <div class="card card-body mt-5">
+        <div class="card-header">
+            @Model.Role.Name'den sil
+        </div>
+        <table class="table table-striped">
+
+            @if (Model.Users.Count() != 0)
+            {
+                <tr>
+                    <th>Kullanıcı </th>
+                    <th>Rol</th>
+                </tr>
+                foreach (var user in Model.Users)
+                {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td><input type="checkbox" name="IdsToDelete" value="@user.Id" /></td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="2">Bu role eklenmiş kullanıcı mevcut yok</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Kaydet</button>
+
+
+}

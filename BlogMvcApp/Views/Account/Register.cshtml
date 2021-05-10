@@ -1,0 +1,78 @@
+﻿@model BlogMvcApp.Models.Register
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Alper Kapusızoğlu</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/Content/fontawesomeall.css" />
+</head>
+<body>
+
+    <div class="d-flex justify-content-center align-items-center" style="height:750px;"> 
+        <div class="col-4">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+            <div class="card bg-light shadow-lg" style="max-width: 500px;">
+                <div class="rounded-top" style="background-color:black; height:40px; width:100%;"></div>
+                <article class="card-body mx-auto" style="max-width: 400px;">
+                    <h4 class="card-title mt-3 text-center">Hesap Oluştur</h4>
+
+                    <form>
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            </div>
+                            @Html.TextBoxFor(i => i.UserName, new { @class = "form-control", @placeholder = "Kullanıcı adınız" })
+                        </div>
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                            </div>
+                            @Html.TextBoxFor(i => i.Email, new { @class = "form-control", placeholder = "E-mail adresiniz" })
+                        </div>
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            @Html.PasswordFor(i => i.Password, new { @class = "form-control", placeholder = "Şifre oluştur" })
+
+                        </div>
+
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            @Html.PasswordFor(i => i.RePassword, new { @class = "form-control", placeholder = "Şifreyi tekrar gir" })
+
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Hesap Oluştur</button>
+                        </div>
+                        <p class="text-center mb-5">Hesabınız var mı? <a href="/Account/Login">Giriş Yap</a> </p>
+                    </form>
+                </article>
+            </div>
+            }
+        </div>
+    </div>
+
+
+
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

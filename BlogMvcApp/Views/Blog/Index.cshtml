@@ -1,0 +1,91 @@
+﻿@model IEnumerable<BlogMvcApp.Entity.Blog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Listesi</h2>
+<hr />
+
+@if (TempData["UpdatedBlog"] != null)
+{
+    var UpdatedBlog = (BlogMvcApp.Entity.Blog)TempData["UpdatedBlog"];
+
+    <div class="alert alert-success" role="alert">
+       <p><i class="fa fa-check"></i><strong> @UpdatedBlog.Heading</strong> Güncellendi</p>
+    </div>
+
+}
+
+<p>
+    @Html.ActionLink("Yeni Blog Ekle", "Create", null, new { @class = "btn btn-primary" })
+    <hr />
+</p>
+
+<table class="table table-bordered table-hover table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Heading)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddedTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Approve)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Homepage)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Heading)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddedTime)
+            </td>
+            <td>
+                @if (item.Approve)
+                {
+                    <label class="badge badge-success">Onaylı</label>
+                }
+                else
+                {
+                    <label class="badge badge-danger">Onay Bekleniyor</label>
+                }
+            </td>
+            <td>
+                @if (item.Homepage)
+                {
+                    <label class="badge badge-success">Anasayfa</label>
+                }
+                else
+                {
+                    <label class="badge badge-danger">Anasayfa Değil</label>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+    }
+
+</table>

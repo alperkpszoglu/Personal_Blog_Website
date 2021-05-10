@@ -1,0 +1,28 @@
+﻿@model BlogMvcApp.Entity.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.Heading</h2>
+
+<img src="https://dogruhaber.com.tr/thumbor/3s65XrMw7si3vu6fZl90Q4qtlqM=/660x400/dogruhaber.com.tr/image/foto/2016/12/02/resim-cizimi_1480677207.jpg" />
+<p>Eklenme Tarihi: @Model.AddedTime</p>
+<blockquote>
+    <p>@Model.Content</p>
+</blockquote>
+
+@section RightColumn
+{
+
+    @Html.Partial("_Search")
+
+    <br />
+
+    @{Html.RenderAction("CategoryList", "Category");}
+
+
+}
+
+
+

@@ -1,0 +1,25 @@
+﻿
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.navbar-content {
+    background-color: black;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Raleway", sans-serif;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
