@@ -268,6 +268,12 @@
     <Compile Include="Entity\Blog.cs" />
     <Compile Include="Entity\BlogContext.cs" />
     <Compile Include="Entity\BlogInitializer.cs" />
+    <Compile Include="Migrations\BlogContext\202105101559575_InitialCreate.cs" />
+    <Compile Include="Migrations\BlogContext\202105101559575_InitialCreate.Designer.cs">
+      <DependentUpon>202105101559575_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\BlogContext\Configuration.cs" />
+    <Compile Include="Migrations\IdentityDataContext\Configuration.cs" />
     <Compile Include="Models\BlogModel.cs" />
     <Compile Include="Entity\Category.cs" />
     <Compile Include="Models\CategoryModel.cs" />
@@ -321,6 +327,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\BlogContext\202105101559575_InitialCreate.resx">
+      <DependentUpon>202105101559575_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

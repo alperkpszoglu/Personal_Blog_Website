@@ -93,3 +93,5 @@ C:\Users\alper\source\repos\BlogMvcApp\BlogMvcApp\bin\Microsoft.Owin.Security.OA
 C:\Users\alper\source\repos\BlogMvcApp\BlogMvcApp\bin\Newtonsoft.Json.xml
 C:\Users\alper\source\repos\BlogMvcApp\BlogMvcApp\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\alper\source\repos\BlogMvcApp\BlogMvcApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\alper\source\repos\BlogMvcApp\BlogMvcApp\obj\Debug\BlogMvcApp.Migrations.BlogContext.InitialCreate.resources
+C:\Users\alper\source\repos\BlogMvcApp\BlogMvcApp\obj\Debug\BlogMvcApp.csproj.GenerateResource.cache

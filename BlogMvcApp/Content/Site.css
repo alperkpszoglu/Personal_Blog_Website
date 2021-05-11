@@ -18,6 +18,12 @@ h1, h2, h3, h4, h5 {
     font-family: 'Inter', sans-serif;
 }
 
+@media (max-width:991px){
+    #nav-auth {
+        display: none;
+    }
+    
+}
 
 /* Set width on the form input elements since they're 100% wide by default */
 /*

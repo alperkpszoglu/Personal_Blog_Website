@@ -27,35 +27,36 @@
                 </li>
             </ul>
         </div>
-
         @Html.Partial("_AuthNavPartial")
     </nav>
+
+
     <br />
     <div class="container body-content">
+      
+            @if (IsSectionDefined("RightColumn"))
+            {
+                <div class="row">
+                    <div class="col-md-8">
 
-        @if (IsSectionDefined("RightColumn"))
-        {
-            <div class="row">
-                <div class="col-md-8">
+                        @RenderBody()
+                    </div>
 
-                    @RenderBody()
+                    <div class="col-md-4">
+
+                        @RenderSection("RightColumn")
+                    </div>
                 </div>
-
-                <div class="col-md-4">
-
-                    @RenderSection("RightColumn")
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderBody()
+                    </div>
                 </div>
-            </div>
-        }
-        else
-        {
-            <div class="row">
-                <div class="col-md-12">
-                    @RenderBody()
-                </div>
-            </div>
-        }
-
+            }
+      
     </div>
 
     <footer>
