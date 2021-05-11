@@ -10,7 +10,7 @@ namespace BlogMvcApp.Identity
     {
         public IdentityDataContext() : base("BlogDb")
         {
-           
+
         }
     }
 }

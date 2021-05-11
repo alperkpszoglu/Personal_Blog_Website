@@ -10,7 +10,7 @@ namespace BlogMvcApp.Entity
     {
         public BlogContext():base("BlogDb")
         {
-            
+           
         }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Category> Categories { get; set; }

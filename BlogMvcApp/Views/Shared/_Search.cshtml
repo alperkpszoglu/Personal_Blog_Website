@@ -3,10 +3,10 @@
 @using (Html.BeginForm("List","Blog",FormMethod.Get))
 { 
 
-<div class="input-group rounded">
+<div class="input-group rounded mt-5">
     @Html.TextBox("key",null,new{@class = "form form-control",@placeholder = "Arama"})
 
-        <button class="btn btn-dark" style=" margin-left: 0.75rem;" type="submit"><i class="fas fa-search"></i></button>
+    <button class="btn btn-dark" style=" margin-left: 0.75rem;" type="submit"><i class="fas fa-search"></i></button>
 </div>
 
 

@@ -4,16 +4,23 @@
     ViewBag.Title = "Details";
 }
 
-<h2>@Model.Heading</h2>
 
-<img src="https://dogruhaber.com.tr/thumbor/3s65XrMw7si3vu6fZl90Q4qtlqM=/660x400/dogruhaber.com.tr/image/foto/2016/12/02/resim-cizimi_1480677207.jpg" />
-<p>Eklenme Tarihi: @Model.AddedTime</p>
-<blockquote>
-    <p>@Model.Content</p>
-</blockquote>
+<h2 style="margin-top: 2rem; margin-bottom: 2rem;">@Model.Heading</h2>
+
+<div class="row mr-1">
+
+    <img class="img-fluid" src="https://mdbootstrap.com/img/new/slides/041.jpg" />
+</div>
+<div class="row">
+
+    <p class="mt-4">Eklenme Tarihi: @Model.AddedTime</p>
+    <blockquote>
+        <p>@Model.Content</p>
+    </blockquote>
+</div>
 
 @section RightColumn
-{
+    {
 
     @Html.Partial("_Search")
 
@@ -23,6 +30,3 @@
 
 
 }
-
-
-
